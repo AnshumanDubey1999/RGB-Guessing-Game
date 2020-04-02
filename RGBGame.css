@@ -1,0 +1,581 @@
+body{
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* GENERAL________________________________________________________________________________________________________________ */
+
+.dialogBox{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    
+    color: #232323;
+}
+
+.used{
+    background-color: rgba(0,0,0,0);
+}
+.unused{
+    background-color: white;
+}
+
+.error{
+    background-color: rgb(255,0,0);
+    transition: all 0.3s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+}
+.red{
+    color: rgb(255,0,0);
+    font-weight: 800;
+}
+.blue{
+    color: rgb(0,0,255);
+    font-weight: 800;
+}
+.green{
+    color: rgb(0,255,0);
+    font-weight: 800;;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+}
+.dontDisplay{
+    display: none;
+}
+
+.centered {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }
+
+.centered2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+/*GAME____________________________________________________________________________________________________________________*/
+
+#game{
+    position: relative;
+    height: 100vh;
+}
+.blur{
+    filter: blur(4px);
+}
+
+h1{
+    margin:0;
+    font-weight: 400;
+    line-height: 1.1;
+    padding: 20px 0;
+}
+div{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#heading{
+    background-color: steelblue;
+    color: #fff;
+    text-align: center;
+}
+#nav{
+    background-color: #fff;
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    color: steelblue;
+    display: inline-block;
+}
+#rgbValues{
+    font-size: 4rem;
+}
+
+@media(max-width:600px){
+    #game h1{
+        font-size: 6vw;
+        line-height: 7vw;
+    }
+    #rgbValues{
+        font-size: 10vw;
+    }
+    #nav #msg{
+        font-size: 3.3vw;
+    }
+}
+.square{
+    width: 30%;
+    background-color: crimson;
+    padding-bottom: 30%;
+    float: left;
+    margin:1.66%;
+    transition: background 0.6s;
+    -webkit-transition: background 0.6s;
+    -moz-transition: background 0.6s;
+    border-radius: 15%;
+}
+.rectangle{
+    width: 15%;
+    padding-bottom: 1%;
+    float: left;
+    margin: 0% 0.83%;
+    transition: background 0.6s;
+    -webkit-transition: background 0.6s;
+    -moz-transition: background 0.6s;
+    -webkit-border-radius: 26px 12px;
+}
+#board{
+    max-width: 600px;
+    margin: 20px auto 0px auto;
+    display: flow-root;
+}
+#lifeLine{
+    max-width: 600px;
+    margin: 4px auto 0px auto;
+    display: flow-root;
+}
+#lifeLineMsg{
+    color: steelblue;
+    max-width: 579px;
+    margin: auto auto;
+    display: flow-root;
+    font-weight: 800;
+    font-size: 0.8em;
+
+}
+#lifeLineMsg span:first-child{
+    float: left;
+}
+#lifeLineMsg span:last-child{
+    float: right;
+}
+button{
+    border: 0;
+    color: steelblue;
+    background-color: #fff;
+    height: 100%;
+    font-weight: 700;
+    padding: 2px 6px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    outline: none;
+}
+
+#msg{
+    display: inline;
+    margin: 5%;
+    font-weight: 700;
+}
+
+button:hover{
+    background-color: steelblue;
+    color: #fff;
+}
+
+
+
+#footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+/*HELP_____________________________________________________________________________________________________________*/
+
+
+
+#help{
+    max-width: 400px;
+    background: rgba(255,255,255,0.8);
+    position: relative;
+}
+
+#help h3{
+    text-align: center;
+    padding: 5px;
+    background-color: steelblue;
+    color: white;
+}
+#help p{
+    font-size: 1rem;
+    text-align: start;
+    padding-left: 10%;
+    color: steelblue;
+}
+
+#help h3 div{
+    font-size: 2.5rem;
+}
+
+#help div{
+    text-align: center;
+    color: white;
+    font-weight: 800px;
+    background-color: steelblue;
+    padding: 5px;
+}
+
+#help #hints{
+    max-width: 400px;
+    display: flow-root;
+}
+#help #hints div{
+    width: 43%;
+    padding: 2%;
+    float: left;
+    margin:2px 1.5%;
+}
+
+
+
+#help p{
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+
+
+#help .cross{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+}
+#help .cross:hover{
+    transition: all 0.3s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    color: red;
+    text-shadow: 0 0 4px red;
+}
+
+
+/*Endgame__________________________________________________________________________________________*/
+#endgame{
+    max-width: 400px;
+    background: steelblue;
+    position: relative;
+    text-align: center;
+}
+#endgame div{
+    width: 100%;
+    display: flow-root;
+}
+
+#endgame div div:first-child{
+    color: white;
+    background-color: steelblue;
+    width: 40%;
+    margin: 0;
+    padding: 5px 0;
+    float: left;
+    font-size: 1.2rem;
+}
+
+#endgame div div:last-child{
+    background-color: white;
+    color: steelblue;
+    font-family: 'Black Ops One', cursive;
+    width: 60%;
+    padding: 5px 0;
+    float: left;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+#endgame h3{
+    padding: 5px 0;
+    margin-bottom: 0;
+    font-weight: 800;
+    color: white;
+    background: steelblue;
+    min-height: 23px;
+}
+
+#endgame h1{
+    font-family: 'Black Ops One', cursive;
+    padding: 2px 10px 0px 10px;
+    font-size: 4rem;
+    margin: 0;
+    color: steelblue;
+    background: white;
+    min-height: 72px;
+}
+
+#endgame hr{
+    margin: 0;
+}
+
+#endgame button{
+    width: 100%;
+    background: white;
+    font-size: 1rem;
+    padding: 2%;
+
+}
+#endgame button:hover{
+    color: white;
+    background-color: steelblue;
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+}
+
+
+/*INTRO__________________________________________________________________*/
+#intro{
+    max-width: 300px;
+    background: steelblue;
+    position: relative;
+    text-align: center;
+}
+
+#phase1{
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    background-color: steelblue;
+    top: -111px;
+    position: absolute;
+    width: 300px;
+}
+#intro .slim1{
+    transition: all 0.5s ease-in-out;
+    transform: scaleY(0);
+    top: -55px;
+}
+
+#intro #phase1 h1{
+    margin: 0 2%;
+    color: steelblue;
+    background-color: white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    position: absolute;
+    text-align: center;
+    top: 5px;
+    transition: all 0.5s ease-in-out;
+    width: 95%;
+    padding: 0;
+    z-index: 2;
+}
+
+#intro #phase1 .disappear{
+    background-color: rgba(0,0,0,0);
+    color: rgba(0,0,0,0);
+} 
+
+#intro #phase1 div{
+    display: inline;
+}
+#intro #phase1 label{
+    color: white;
+    font-weight: 800;
+    text-align: start;
+    position: relative;
+    display: inline-block;
+    width: 96%;
+    font-size: 2rem;
+    top: 33px;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 1% 2%;
+    height: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#intro #phase1 .smallLabel{
+    font-size: 1rem;
+    top: 0;
+}
+
+#intro #phase1 input{
+    position: relative;
+    display: inline-block;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    background: steelblue;
+    width: 96%;
+    font-size: 2rem;
+    padding: 1% 2%;
+    outline: none;
+}
+#intro button{
+    width: 96%;
+    color: white;
+    background-color: steelblue;
+    font-size: 1.5rem;
+    margin: 2%;
+
+}
+#intro button:hover{
+    background-color: white;
+    color: steelblue;
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+}
+
+/*PHASE2__________________________________________________________________________*/
+
+#phase2 {
+    background: white;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    bottom: -87px;
+    position: absolute;
+    width: 300px;
+}
+
+#intro .slim2{
+    transition: all 0.5s ease-in-out;
+    transform: scaleY(0);
+    bottom: -43px;
+}
+
+#intro #phase2 h4{
+    margin: 0;
+    color: white;
+    background-color: steelblue;
+}
+
+#intro #phase2 h1{
+    margin: 0;
+    color: steelblue;
+    background-color: white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    padding: 2% 0;
+}
+
+#intro #phase2 nav{
+    width: 100%;
+    display: flow-root;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+}
+ 
+#intro #phase2 nav button{
+    width: 50%;
+    float: left;
+    margin: 0;
+    background: steelblue;
+    color: white;
+    font-size: 1rem;
+    padding: 2%;
+}
+
+#intro #phase2 nav button:hover{
+    background: white;
+    color: steelblue;
+}
+#intro #phase2 nav .modeSelected{
+    background-color: white;
+    color: steelblue;
+
+}
+
+
+
+
+#appearLast{
+    width: 100%;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    background-color: white;
+    display: block;
+    bottom: -114px;
+}
+
+#intro #phase2 div div{
+    display: flow-root;
+    position: relative;
+}
+
+
+#intro #phase2 div div h3{
+    margin: 0;
+    color: steelblue;
+    word-spacing: 3rem;
+    float: left;
+    width: 50%;
+    background-color: white;
+}
+
+
+
+
+#intro #phase2 div div div:first-child{
+    background-color: steelblue;
+    color: white;
+    width: 50%;
+    margin: 0;
+    padding: 5px 0;
+    float: left;
+    font-size: 1.2rem;
+    height: 26px;
+}
+#intro #phase2 div div div:last-child{
+    color: steelblue;
+    font-family:  'Black Ops One', cursive;
+    width: 50%;
+    margin: 0;
+    padding: 3px 0;
+    float: left;
+    font-size: 1.4rem;
+    border-collapse: 1px solid steelblue;
+}
+
+
+
+#intro #phase2 div button{
+    color: steelblue;
+    background-color: white;
+    margin: 0;
+    width: 100%;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+#intro #phase2 div button:hover{
+    color: white;
+    background-color: steelblue;
+}
+
+
+#intro #phase2 .slim{
+    transition: all 0.5s ease-in-out;
+    transform: scaleY(0);
+    bottom: -57px;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Game</title>
+    <link rel="stylesheet" href="RGBGame.css">
+    <script src="https://kit.fontawesome.com/06a7ac0ecc.js" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+
+
+    <div class="dialogBox" id="introBox">
+        <div id="intro" class="centered">
+            <div id="phase1">
+                <h1 class="">Welcome</h1>
+                <div>
+                    <label for="name">Name</label>
+                    <input id="name" type="text" maxlength="15">
+                    <button type="submit">Enter!</button>
+                </div>
+            </div>
+            
+            <div id="phase2" class="slim2">
+                <h4>Welcome</h4>
+                <h1>Player1</h1>
+                <nav>
+                    <button id="easy" class="modeButton">EASY</button>
+                    <button id="hard" class="modeButton">HARD</button>
+                </nav>
+                <div id="appearLast" class="slim">
+                    <div >
+                        <h3>Lives </h3><h3> <i class="fas fa-times"></i> 3</h3>
+                        <h3>Reset </h3><h3><i class="fas fa-times"></i> 3</h3>
+                    </div>
+                    <div class="highScore">
+                        <div>HIGH SCORE</div><div>00000</div>
+                    </div>
+                    <button  type="submit">Begin!</button>
+                </div>
+                
+            </div>
+            
+           
+        </div>
+    </div>
+
+
+    <div class="dialogBox dontDisplay" id="helpBox">
+        <div id="help" class="centered2">
+            <div class="cross">
+                <i class="fas fa-times"></i>
+            </div>
+            
+            <h3>
+                THE GREAT
+                <div>RGB(<span class="red">X</span>, <span class="green">Y</span>, <span class="blue">Z</span>)</div>
+                GUESSING GAME
+                
+            </h3>
+            <p>
+                <span class="red">X</span>: The amount of <span class="red">RED</span> in the color.<br>
+                <span class="green">Y</span>: The amount of <span class="green">GREEN</span> in the color.<br>
+                <span class="blue">Z</span>: The amount of <span class="blue">BLUE</span> in the color.
+            </p>
+            <div>
+                -: Some Important Combinations :-
+                <div id="hints">
+                    <div style="background: rgb(0,0,0); color: white;">RGB(0, 0, 0)</div>
+                    <div style="background: rgb(255,255,255); color: black;">RGB(255, 255, 255)</div>
+                    <div style="background: rgb(255,0,0); color: black;">RGB(255, 0, 0)</div>
+                    <div style="background: rgb(0,255,0); color: black;">RGB(0, 255, 0)</div>
+                    <div style="background: rgb(0,0,255); color: black;">RGB(0, 0, 255)</div>
+                    <div style="background: rgb(255,0,255); color: black;">RGB(255, 0, 255)</div>
+                    <div style="background: rgb(0,255,255); color: black;">RGB(0, 255, 255)</div>
+                    <div style="background: rgb(255,255,0); color: black;">RGB(255, 255, 0)</div>
+                </div>
+            </div>
+            <p>For more information, <a style="text-decoration: none; color: steelblue;" href="https://en.wikipedia.org/wiki/RGB_color_model">Click Here!</a></p>
+        </div>
+    </div>
+
+
+    <div id="game"  class="blur">
+        <div id="heading">
+            <h1>
+                THE GREAT<br>
+                <span id="rgbValues">RGB(0, 0, 0)</span>
+                <br>GUESSING GAME
+            </h1>
+        </div>
+        <div id="nav">
+            <button id="reset">RESET</button>
+            <span id="msg">Make a Guess</span>
+            <button id="info"><i class="fas fa-info-circle"></i></button>
+        </div>
+        <div id="board">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+        <div id="footer">
+            <div id="lifeLineMsg">
+                <span>Lives</span>
+                <span>Resets</span>
+            </div>
+            <div id="lifeLine">
+                <div class="rectangle unused"></div>
+                <div class="rectangle unused"></div>
+                <div class="rectangle unused"></div>
+                <div class="rectangle unused"></div>
+                <div class="rectangle unused"></div>
+                <div class="rectangle unused"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="dialogBox  dontDisplay" id="endgameBox">
+        <div id="endgame" class="centered">
+            <h3>FINAL SCORE</h3>
+            <h1>00000</h1>
+            <div>
+                <div>HIGH SCORE </div><div>00000</div>
+            </div>
+            
+            <button>Play Again?</button>
+        </div>
+    </div>
+
+    
+    
+
+
+    <script src="RGBGame.js"></script>
+   
+</body>
+</html>
