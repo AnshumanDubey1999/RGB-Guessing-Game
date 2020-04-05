@@ -11,7 +11,7 @@ app.get("/", function(req, res){
     res.render("home")
 })
 
-//app.listen(process.env.PORT, process.env.IP)
-app.listen(3000, function(){
-    console.log("The game is ON!!!")
-})
+app.listen(process.env.PORT, process.env.IP)
+// app.listen(3000, function(){
+//     console.log("The game is ON!!!")
+// })
